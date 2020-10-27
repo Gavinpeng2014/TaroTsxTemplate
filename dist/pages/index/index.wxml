@@ -1,0 +1,7 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container Index">新页面创建模板风格
+        <view class="">
+            <parser html="{{html}}" tag-style="{{tagStyle}}"></parser>
+        </view>
+    </view>
+</block>
