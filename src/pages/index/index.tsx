@@ -1,6 +1,7 @@
 import { ComponentClass } from 'react'
 import Taro, { Component } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View, Button } from '@tarojs/components'
+import { Request } from '../../utils/request'
 import './index.scss'
 
 declare global {
@@ -12,12 +13,15 @@ declare global {
 }
 
 import { connect } from '@tarojs/redux'
-// import {  } from '../../actions/counter'
+import { add, minus } from '../../actions/counter'
 type PageStateProps = {
-    counter: {}
+    counter: {
+        num: number
+    }
 }
 type PageDispatchProps = {
-
+    add: () => void
+    minus: () => void
 }
 type PageOwnProps = {}
 type PageState = {}
@@ -25,7 +29,14 @@ type IProps = PageStateProps & PageDispatchProps & PageOwnProps
 interface Index {
     props: IProps
 }
-@connect(({ counter }) => ({ counter }),(dispatch) =>({  }))
+@connect(({ counter }) => ({ counter }),(dispatch) =>({ 
+    add() {
+        dispatch(add())
+    },
+    minus() {
+        dispatch(minus())
+    }
+}))
 class Index extends Component {
     config = {
         navigationBarTitleText: 'weChat',
@@ -42,7 +53,9 @@ class Index extends Component {
             video: 'width: 100%;'
         }
     }
-    componentWillMount() { }
+    componentWillMount() { 
+        this.testRequire();
+    }
     componentDidMount() { }
     componentWillReceiveProps(nextProps, nextContext) { }
     componentWillUnmount() { }
@@ -51,14 +64,31 @@ class Index extends Component {
     componentDidCatchError() { }
     componentDidNotFound() { }
     //--------- 自定义方法
+    /**
+     * 测试请求
+     */
+    testRequire() {
+        Request({
+            url: '/test',
+            data: { test: 1 },
+            loading: true,
+            loadingText: '加载中...'
+        }).then((res:any) => {
+            console.log(res)
+        }).catch((err:any) => { console.log(err) })
+    }
     render() {
         const { html, tagStyle } = this.state
+        const { num } = this.props.counter
         return (
             <View className='container Index'>
-                新页面创建模板风格
-                <View className=''>
+                <View>新页面创建模板风格</View>
+                <View>
                     <parser html={ html } tag-style={ tagStyle }/>
                 </View>
+                <View className='num'>当前num: { num }</View>
+                <Button onClick={ this.props.add }>num+1</Button>
+                <Button onClick={ this.props.minus }>num-1</Button>
             </View>
         );
     }

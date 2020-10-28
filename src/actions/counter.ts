@@ -2,23 +2,38 @@ import {
   ADD,
   MINUS
 } from '../constants/counter'
-
-export const add = () => {
+/**
+ * 示例 触发指令 ADD
+ */
+const add = () => {
   return {
     type: ADD
   }
 }
-export const minus = () => {
+/**
+ * 示例 触发指令 MINUS
+ */
+const minus = () => {
   return {
     type: MINUS
   }
 }
-
-// 异步的action
-export function asyncAdd () {
-  return dispatch => {
+/**
+ * 示例 异步触发指令 add
+ */
+const asyncAdd = () => {
+  return (dispatch:any) => {
     setTimeout(() => {
       dispatch(add())
     }, 2000)
   }
+}
+
+export {
+  // 示例 触发指令 ADD
+  add,
+  // 示例 触发指令 MINUS
+  minus,
+  // 示例 异步触发指令 add
+  asyncAdd
 }
