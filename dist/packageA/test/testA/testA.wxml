@@ -1,3 +1,0 @@
-<block wx:if="{{$taroCompReady}}">
-    <view class="container testA">新页面创建模板风格-分包testA</view>
-</block>
