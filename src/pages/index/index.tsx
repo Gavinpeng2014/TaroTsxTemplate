@@ -87,8 +87,8 @@ class Index extends Component {
                     <parser html={ html } tag-style={ tagStyle }/>
                 </View>
                 <View className='num'>当前num: { num }</View>
-                <Button onClick={ this.props.add }>num+1</Button>
-                <Button onClick={ this.props.minus }>num-1</Button>
+                <Button onClick={ this.props.add }>num+</Button>
+                <Button onClick={ this.props.minus }>num-</Button>
             </View>
         );
     }

@@ -3,7 +3,7 @@ module.exports = {
     // 生产环境
     NODE_ENV: '"production"',
     // 公共配置域名
-    DOMAIN_NAME: 'https: production.gavinpeng.com'
+    DOMAIN_NAME: 'https://production.gavinpeng.com'
   },
   defineConstants: {
   },
