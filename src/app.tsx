@@ -60,31 +60,31 @@ class App extends Component {
         'root': 'packageA',
         'pages': [
           'test/testA/testA'
-        ],
+        ]
       },
       {
         'root': 'packageB',
         'pages': [
           'test/testA/testA'
-        ],
+        ]
       },
       {
         'root': 'packageC',
         'pages': [
           'test/testA/testA'
-        ],
+        ]
       },
       {
         'root': 'packageD',
         'pages': [
           'test/testA/testA'
-        ],
+        ]
       },
       {
         'root': 'packageE',
         'pages': [
           'test/testA/testA'
-        ],
+        ]
       },
     ],
     'networkTimeout': {
