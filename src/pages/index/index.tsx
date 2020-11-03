@@ -13,15 +13,18 @@ declare global {
 }
 
 import { connect } from '@tarojs/redux'
-import { add, minus } from '../../actions/counter'
+import { add, minus, outLogin } from '../../actions/counter'
 type PageStateProps = {
     counter: {
-        num: number
+        num: number,
+        loginState: boolean,
+        token: string
     }
 }
 type PageDispatchProps = {
     add: () => void
-    minus: () => void
+    minus: () => void,
+    outLogin: () => void
 }
 type PageOwnProps = {}
 type PageState = {}
@@ -35,6 +38,9 @@ interface Index {
     },
     minus() {
         dispatch(minus())
+    },
+    outLogin() {
+        dispatch(outLogin())
     }
 }))
 class Index extends Component {
@@ -57,7 +63,7 @@ class Index extends Component {
         this.testRequire();
     }
     componentDidMount() { }
-    componentWillReceiveProps(nextProps, nextContext) { }
+    componentWillReceiveProps() { }
     componentWillUnmount() { }
     componentDidShow() { }
     componentDidHide() { }
@@ -77,18 +83,30 @@ class Index extends Component {
             console.log(res)
         }).catch((err:any) => { console.log(err) })
     }
+    /**
+     * 去登陆
+     */
+    goLogin() {
+        Taro.navigateTo({ url: '/pages/login/login' })
+    }
     render() {
         const { html, tagStyle } = this.state
-        const { num } = this.props.counter
+        const { num, loginState, token } = this.props.counter
         return (
-            <View className='container Index'>
-                <View>新页面创建模板风格</View>
+            <View className='container index'>
+                <View>Hellow Word!</View>
                 <View>
                     <parser html={ html } tag-style={ tagStyle }/>
                 </View>
                 <View className='num'>当前num: { num }</View>
                 <Button onClick={ this.props.add }>num+</Button>
                 <Button onClick={ this.props.minus }>num-</Button>
+                <View>当前token: { token }</View>
+                {
+                    loginState 
+                    ? <Button onClick={ this.props.outLogin }>退出登录</Button>
+                    : <Button onClick={ () => this.goLogin()  }>去登陆</Button>
+                }
             </View>
         );
     }

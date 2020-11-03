@@ -1,6 +1,8 @@
 import {
   ADD,
-  MINUS
+  MINUS,
+  USERLOGIN,
+  OUTLOGIN
 } from '../constants/counter'
 /**
  * 示例 触发指令 ADD
@@ -28,6 +30,24 @@ const asyncAdd = () => {
     }, 2000)
   }
 }
+/**
+ * 用户登陆
+ */
+const userLogin = (token:string,userInfo:any) => {
+  return {
+    type: USERLOGIN,
+    token,
+    userInfo
+  }
+}
+/**
+ * 退出登录
+ */
+const outLogin = () => {
+  return {
+    type: OUTLOGIN
+  }
+}
 
 export {
   // 示例 触发指令 ADD
@@ -35,5 +55,9 @@ export {
   // 示例 触发指令 MINUS
   minus,
   // 示例 异步触发指令 add
-  asyncAdd
+  asyncAdd,
+  // 用户登录
+  userLogin,
+  // 退出登录
+  outLogin
 }

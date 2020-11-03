@@ -26,76 +26,78 @@ class App extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    'pages': [
+    "pages": [
       // 首页
-      'pages/index/index',
+      "pages/index/index",
       // 临时文件
-      'pages/temporary/temporary'
+      "pages/temporary/temporary",
+      // 登陆页
+      "pages/login/login"
     ],
-    'window': {
-      'backgroundTextStyle': 'light',
-      'navigationBarBackgroundColor': '#fff',
-      'navigationBarTitleText': 'WeChat',
-      'navigationBarTextStyle': 'black'
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "WeChat",
+      "navigationBarTextStyle": "black"
     },
-    'tabBar': {
-      'selectedColor': '#07c160',
-      'list': [
+    "tabBar": {
+      "selectedColor": "#07c160",
+      "list": [
         {
-          'pagePath': 'pages/index/index',
-          'text': 'Tab1',
-          'iconPath': 'assets/tabBar/2.png',
-          'selectedIconPath': 'assets/tabBar/2-1.png'
+          "pagePath": "pages/index/index",
+          "text": "Tab1",
+          "iconPath": "assets/tabBar/2.png",
+          "selectedIconPath": "assets/tabBar/2-1.png"
         },
         {
-          'pagePath': 'pages/temporary/temporary',
-          'text': 'Tab2',
-          'iconPath': 'assets/tabBar/3.png',
-          'selectedIconPath': 'assets/tabBar/3-1.png'
+          "pagePath": "pages/temporary/temporary",
+          "text": "Tab2",
+          "iconPath": "assets/tabBar/3.png",
+          "selectedIconPath": "assets/tabBar/3-1.png"
         }
       ]
     },
-    'subPackages': [
+    "subPackages": [
       {
-        'root': 'packageA',
-        'pages': [
-          'test/testA/testA'
+        "root": "packageA",
+        "pages": [
+          "test/testA/testA"
         ]
       },
       {
-        'root': 'packageB',
-        'pages': [
-          'test/testA/testA'
+        "root": "packageB",
+        "pages": [
+          "test/testA/testA"
         ]
       },
       {
-        'root': 'packageC',
-        'pages': [
-          'test/testA/testA'
+        "root": "packageC",
+        "pages": [
+          "test/testA/testA"
         ]
       },
       {
-        'root': 'packageD',
-        'pages': [
-          'test/testA/testA'
+        "root": "packageD",
+        "pages": [
+          "test/testA/testA"
         ]
       },
       {
-        'root': 'packageE',
-        'pages': [
-          'test/testA/testA'
+        "root": "packageE",
+        "pages": [
+          "test/testA/testA"
         ]
       },
     ],
-    'networkTimeout': {
-      'request': 20000,
-      'connectSocket': 20000,
-      'uploadFile': 20000,
-      'downloadFile': 20000
+    "networkTimeout": {
+      "request": 20000,
+      "connectSocket": 20000,
+      "uploadFile": 20000,
+      "downloadFile": 20000
     },
-    'permission': {
-      'scope.userLocation': {
-        'desc': '您的位置信息将用于小程序位置接口效果演示'
+    "permission": {
+      "scope.userLocation": {
+        "desc": "您的位置信息将用于小程序位置接口效果演示"
       }
     }
   }

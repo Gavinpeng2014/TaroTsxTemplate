@@ -25,7 +25,7 @@ class Xxx extends Component {
     state = {}
     componentWillMount() { }
     componentDidMount() { }
-    componentWillReceiveProps(nextProps, nextContext) { }
+    componentWillReceiveProps() { }
     componentWillUnmount() { }
     componentDidShow() { }
     componentDidHide() { }
