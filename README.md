@@ -29,6 +29,9 @@
 7. @connect(({ counter }) => ({ counter }),(dispatch) =>({ xxx() { dispatch(xxx())} })) 给页面提供调用方式 this.props.xxx()
 ```
 
+### 快速创建新页面
+- taro create --name [页面名称] 能够在当前项目的pages目录下快速生成新的页面文件，并填充基础代码，是一个提高开发效率的利器。
+
 ### 任何问题或有误人子弟的地方还请多多指教
 ```
 Author: Gavin
